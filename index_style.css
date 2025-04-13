@@ -1,0 +1,146 @@
+/* 全站基本設定 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* 保證內邊距和邊框計算到元素的總寬度 */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* 頁首設定 */
+header {
+    background-color: rgb(189, 146, 146);
+    position: relative;
+    padding: 10px 20px;
+}
+
+/* logo 設定 */
+.logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 漢堡選單按鈕設定 */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 1vw;
+    cursor: pointer;
+}
+
+/* 頁面標題設定 */
+h1 {
+    color: blue;
+    position: absolute;
+    left: 1vw;
+    top: 0;
+    line-height: 60px;
+}
+
+/* 內容區的 h2 標題設定 */
+h2 {
+    position: relative;
+    height: 70px;
+    top: 5vw;
+    color: brown;
+}
+
+/* 預設的圖片設定 */
+.responsive-img {
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 預設為橫向的選單 */
+header ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+header li {
+    display: inline;
+    margin-right: 4vw;
+    line-height: 60px;
+}
+
+header a {
+    color: blue;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* 響應式設計：當螢幕小於 872px 時 */
+@media (max-width: 872px) {
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: -250px; /* 從畫面外開始 */
+        width: 200px;
+        background-color: transparent; /* ✅ 背景透明 */
+        text-align: right;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: none; /* 可留可去，看你要不要有陰影 */
+        transition: right 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 100;
+    }
+
+    header nav.active ul {
+        right: 10px; /* 滑進來顯示 */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    header li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    body.active {
+        overflow: hidden;
+    }
+
+    body.active::before {
+        display: none; /* 如果你不想要遮罩可以隱藏它 */
+    }
+}
+
+
+/* 加上選單遮罩層 */
+body.active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    z-index: 99; /* 在選單下方 */
+}
+header nav {
+    z-index: 100; /* 確保選單在遮罩上層 */
+    position: relative;
+}
