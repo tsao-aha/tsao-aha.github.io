@@ -51,6 +51,24 @@ h2 {
     top: 5vw;
     color: brown;
 }
+main {
+    text-align: center; /* 文字置中 */
+    font-size: 1.3rem;  /* 放大文字，約130%大小 */
+    line-height: 1.8;   /* 行距舒服一點 */
+    padding: 20px;
+}
+
+main h2 {
+    font-size: 2rem;    /* 標題更大一點 */
+    color: #c40000;     /* 可自訂顏色或移除這行 */
+    margin-bottom: 20px;
+}
+  
+  main img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
 
 /* 預設的圖片設定 */
 .responsive-img {
@@ -143,4 +161,25 @@ body.active::before {
 header nav {
     z-index: 100; /* 確保選單在遮罩上層 */
     position: relative;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1; /* 讓 main 撐開空間 */
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8; /* 可加上背景色讓 footer 更明顯 */
+    font-size: 0.9rem;
 }
