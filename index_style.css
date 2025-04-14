@@ -2,11 +2,31 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* 保證內邊距和邊框計算到元素的總寬度 */
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("店門1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* 白色遮罩，讓文字好讀 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85); /* 白色 + 透明度 */
+    z-index: -1;
 }
 
 /* 頁首設定 */
@@ -16,14 +36,21 @@ header {
     padding: 10px 20px;
 }
 
-/* logo 設定 */
 .logo {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* 漢堡選單按鈕設定 */
+h1 {
+    color: blue;
+    position: absolute;
+    left: 1vw;
+    top: 0;
+    line-height: 60px;
+}
+
+/* 漢堡選單按鈕 */
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -35,50 +62,7 @@ header {
     cursor: pointer;
 }
 
-/* 頁面標題設定 */
-h1 {
-    color: blue;
-    position: absolute;
-    left: 1vw;
-    top: 0;
-    line-height: 60px;
-}
-
-/* 內容區的 h2 標題設定 */
-h2 {
-    position: relative;
-    height: 70px;
-    top: 5vw;
-    color: brown;
-}
-main {
-    text-align: center; /* 文字置中 */
-    font-size: 1.3rem;  /* 放大文字，約130%大小 */
-    line-height: 1.8;   /* 行距舒服一點 */
-    padding: 20px;
-}
-
-main h2 {
-    font-size: 2rem;    /* 標題更大一點 */
-    color: #c40000;     /* 可自訂顏色或移除這行 */
-    margin-bottom: 20px;
-}
-  
-  main img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-  }
-
-/* 預設的圖片設定 */
-.responsive-img {
-    max-width: 500px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-/* 預設為橫向的選單 */
+/* 導覽選單 */
 header ul {
     position: absolute;
     right: 5vw;
@@ -87,6 +71,7 @@ header ul {
     display: flex;
     justify-content: flex-end;
 }
+
 header li {
     display: inline;
     margin-right: 4vw;
@@ -102,20 +87,55 @@ header a:hover {
     text-decoration: underline;
 }
 
-/* 響應式設計：當螢幕小於 872px 時 */
+/* 主內容設定 */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    flex: 1;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+}
+
+main h2 {
+    font-size: 2rem;
+    color: brown;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+main img,
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: block;
+}
+
+/* 頁尾設定 */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    font-size: 0.9rem;
+}
+
+/* 響應式選單 */
 @media (max-width: 872px) {
     header nav ul {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: -250px; /* 從畫面外開始 */
+        right: -250px;
         width: 200px;
-        background-color: transparent; /* ✅ 背景透明 */
+        background-color: white;
         text-align: right;
         padding: 1rem;
         border-radius: 8px;
-        box-shadow: none; /* 可留可去，看你要不要有陰影 */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
         transition: right 0.3s ease, opacity 0.3s ease;
         opacity: 0;
         visibility: hidden;
@@ -123,7 +143,7 @@ header a:hover {
     }
 
     header nav.active ul {
-        right: 10px; /* 滑進來顯示 */
+        right: 10px;
         opacity: 1;
         visibility: visible;
     }
@@ -140,46 +160,9 @@ header a:hover {
     body.active {
         overflow: hidden;
     }
-
-    body.active::before {
-        display: none; /* 如果你不想要遮罩可以隱藏它 */
-    }
 }
 
-
-/* 加上選單遮罩層 */
-body.active::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
-    z-index: 99; /* 在選單下方 */
-}
 header nav {
-    z-index: 100; /* 確保選單在遮罩上層 */
+    z-index: 100;
     position: relative;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-}
-
-main {
-    flex: 1; /* 讓 main 撐開空間 */
-    text-align: center;
-    font-size: 1.3rem;
-    line-height: 1.8;
-    padding: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f8f8f8; /* 可加上背景色讓 footer 更明顯 */
-    font-size: 0.9rem;
 }
