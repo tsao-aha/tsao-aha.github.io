@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收費標準 - 衣博士龜山十巷店</title>
+    <link rel="stylesheet" href="fees_style.css">
+</head>
+<body> 
+    <header>
+        <h1><a href="index.html">
+            <img src="logo_01.png" alt="衣博士龜山十巷店" class="logo">
+        </a></h1>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="fees.html">收費標準</a></li>
+                <li><a href="VM.html">自助購買</a></li>
+                <li><a href="call_me.html">聯絡我們</a></li>
+                <li><a href="lost.html">尋找遺失物</a></li>
+                <li><a href="https://www.184.com.tw/">品牌介紹</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>收費標準</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>設備</th>
+                    <th>價格</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>特大型洗衣機</td>
+                    <td>1次 / 120元</td>
+                </tr>
+                <tr>
+                    <td>大型洗衣機</td>
+                    <td>1次 / 80元</td>
+                </tr>
+                <tr>
+                    <td>中型洗衣機</td>
+                    <td>1次 / 60元</td>
+                </tr>
+                <tr>
+                    <td>烘衣機</td>
+                    <td>6分鐘 / 10元</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note">※依現場收費為標準※</p>
+    </main>
+
+    <footer>
+        <p>Copyright © 2025 衣博士龜山十巷店 All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            const btn = document.querySelector('.menu-toggle');
+            const body = document.body;
+    
+            nav.classList.toggle('active');
+            body.classList.toggle('active');
+    
+            btn.textContent = nav.classList.contains('active') ? "✖" : "☰";
+        }
+    </script>
+</body>
+</html>

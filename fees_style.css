@@ -1,0 +1,63 @@
+@import url('index_style.css'); /* 如果你想沿用 index 的設定 */
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    flex: 1;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 2rem;
+    color: red;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+main h2::before {
+    bottom: 0;
+}
+
+main h2::after {
+    bottom: -6px; /* 第二條線距離第一條線 6px */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+th {
+    background-color: #eee;
+    color: #333;
+}
+.note {
+    color: #ff3b3b;      /* 亮紅色 */
+    font-weight: bold;   /* 粗體 */
+    text-align: center;  /* 置中 */
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
