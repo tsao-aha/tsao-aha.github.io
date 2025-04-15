@@ -90,14 +90,17 @@ main {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #333;
-    text-align: justify;
+    text-align: center;
 }
 
 main h2 {
     font-size: 2rem;
-    color: brown;
     margin-bottom: 20px;
     text-align: center;
+}
+#title span {
+    transition: color 0.5s ease;
+    font-weight: bold;
 }
 
 main img,

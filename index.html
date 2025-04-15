@@ -26,11 +26,14 @@
       </header>
 
     <main>
-        <h2>衣博士龜山十巷店</h2>
+        <h2 id="title">
+            <span>衣</span><span>博</span><span>士</span><span>龜</span><span>山</span><span>十</span><span>巷</span><span>店</span>
+          </h2>
+          
         <p>
             我們致力於為您提供最優質的自助洗衣服務<br>
             店內附設十個免費洗衣籃，方便您分類衣物<br>
-            此外，店內附設販賣機（販售塑膠袋與靜電紙）<br>
+            此外，店內附設販賣機<br>（販售塑膠袋與靜電紙）<br>
             另洗衣機有免費提供洗衣精與柔軟精<br>
             讓您的衣物更加潔淨柔軟，煥然如新
             我們亦設有兌幣機（限使用100元紙鈔）<br>
@@ -57,6 +60,25 @@
                 btn.textContent = "☰";
             }
         }
+    </script>
+    <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    
+        function changeEachCharColor() {
+            const spans = document.querySelectorAll('#title span');
+            spans.forEach(span => {
+                span.style.color = getRandomColor();
+            });
+        }
+    
+        setInterval(changeEachCharColor, 1000);
     </script>
 </body>
 </html>
