@@ -1,0 +1,62 @@
+@import url('index_style.css'); /* 沿用首頁基本設定 */
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    flex: 1;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: center;
+  }
+  
+  main img {
+    display: block;
+    margin: 20px auto;
+    max-width: 80%;
+    height: auto;
+  }
+
+main h2 {
+  font-size: 2rem;
+  color: brown;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+main ul {
+  list-style: disc;
+  text-align: left;
+  margin: 20px auto;
+  padding-left: 2em;
+  max-width: 500px;
+}
+
+main li {
+  margin-bottom: 10px;
+}
+
+.note {
+    color: #ff3b3b;      /* 亮紅色 */
+    font-weight: bold;   /* 粗體 */
+    text-align: center;  /* 置中 */
+    margin-top: 20px;
+  }  
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+  font-size: 0.9rem;
+}
+
+.responsive-img {
+    max-width: 50%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  

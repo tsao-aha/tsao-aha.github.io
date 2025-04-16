@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>自助購買</title>
+  <link rel="stylesheet" href="VM_style.css" />
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="index.html">
+        <img src="logo_01.png" alt="衣博士龜山十巷店" class="logo" />
+      </a>
+    </h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="fees.html">收費標準</a></li>
+        <li><a href="VM.html">自助購買</a></li>
+        <li><a href="call_me.html">聯絡我們</a></li>
+        <li><a href="lost.html">尋找遺失物</a></li>
+        <li><a href="https://www.184.com.tw/">品牌介紹</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>自助購買服務</h2>
+    <p>我們提供販賣機供顧客購買以下商品：</p>
+        <ul>
+            <li>塑膠袋（單一尺寸）/10元</li>
+            <img src="洗衣袋外盒 拷貝.jpg" alt="塑膠袋示意圖" />
+            <li>靜電紙/10元</li>
+            <img src="靜電紙外盒.jpg" alt="靜電紙示意圖" />
+          </ul>
+          
+    <p>操作方式簡單，現金付款即可完成購買。</p>
+    <p class="note">※商品價格如有變動，以現場為準※</p>
+  </main>
+
+  <footer>
+    <p>Copyright © 2025 衣博士龜山十巷店 All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-menu');
+      const btn = document.querySelector('.menu-toggle');
+      const body = document.body;
+
+      nav.classList.toggle('active');
+      body.classList.toggle('active');
+
+      btn.textContent = nav.classList.contains('active') ? "✖" : "☰";
+    }
+  </script>
+</body>
+</html>
